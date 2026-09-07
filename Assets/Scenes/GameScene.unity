@@ -256,6 +256,17 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &991200394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1805484699510059279, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+  m_PrefabInstance: {fileID: 6939386994890370463}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515c99f246d92a74c80156eeab6c8d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1001 &6454132314271823331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,6 +336,46 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -251064778171238078, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -251064778171238078, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 218a08e7-e667-4161-9aec-6ecbff83fec8
+      objectReference: {fileID: 0}
+    - target: {fileID: -251064778171238078, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: 'Player/TimeStop[/Keyboard/z]'
+      objectReference: {fileID: 0}
+    - target: {fileID: -251064778171238078, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -251064778171238078, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -251064778171238078, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 991200394}
+    - target: {fileID: -251064778171238078, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -251064778171238078, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTimeStop
+      objectReference: {fileID: 0}
+    - target: {fileID: -251064778171238078, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -251064778171238078, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1143951367249931971, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -364,6 +415,14 @@ PrefabInstance:
     - target: {fileID: 1143951367249931971, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805484699510059279, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 7724083102469178208, guid: f49fbe705a39b724a8782f411dec5bf8, type: 3}
+    - target: {fileID: 1805484699510059279, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
+      propertyPath: InitialFireOffset.y
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2933632275756963397, guid: 2ee37f04f76cda34497d897c71e04413, type: 3}
       propertyPath: m_Name
