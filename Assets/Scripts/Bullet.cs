@@ -5,8 +5,12 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 10f; //弾の速さ
     private bool IsMoving = true;
     private float destroyTimer = 0;
+    [SerializeField] private SpriteRenderer mySprite;
+    [SerializeField] private Sprite normalTexture;
+    [SerializeField] private Sprite timeStopTexture;
 
     void Awake() {
+        mySprite.sprite = normalTexture;
     }
 
     void Update() {
@@ -30,6 +34,7 @@ public class Bullet : MonoBehaviour
     }
 
     public void Stop() {
+        mySprite.sprite = timeStopTexture;
         IsMoving = false;
     }
 
@@ -38,6 +43,7 @@ public class Bullet : MonoBehaviour
     }
 
     public void Move() {
+        mySprite.sprite = normalTexture;
         IsMoving = true;
     }
 }
