@@ -7,13 +7,21 @@ public class Template : SpawnCommonClass
 {
     public override IEnumerator Spawn(WeakEnemyInfo date)
     {
-        for(int i = 0; i < date.weakSpawnNumber; i++) // date.weaSpawnNumberの回数だけ出現
+        TimeManager timeManager = GameObject.FindAnyObjectByType<TimeManager>();
+        int i = 0;
+        while(i < date.weakSpawnNumber)
         {
-            /*
-                forとyield returnの間のここに出現処理を書いていく。
-                これで多分大体の連続して出現する処理は書けると思いますが、不便なところがあれば教えてください
-            */
-            yield return new WaitForSeconds(date.interval); // date.intervalの間隔で
+            if (!timeManager.IstimePassing){
+                yield return new WaitForSeconds(0);
+            }
+            else{
+                /*
+                    forとyield returnの間のここに出現処理を書いていく。
+                    これで多分大体の連続して出現する処理は書けると思いますが、不便なところがあれば教えてください
+                */
+                i++;
+                yield return new WaitForSeconds(date.interval); // date.intervalの間隔で
+            }
         }
     }
 }
