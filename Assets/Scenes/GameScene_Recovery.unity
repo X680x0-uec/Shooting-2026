@@ -405,23 +405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78eca1c455b2f0d4f8c4aaed2c99a76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  spawnData:
-  - Enemy: {fileID: 7385752571213274571, guid: 8179f1e4f2b58e046b1dc8e462f34723, type: 3}
-    spawnTime: 7
-    spawnPosition: {x: 0, y: 6}
-  weakDate:
-  - weakEnemy: {fileID: 2952900400466579503, guid: 1ab89db362f628745ad0dd77e406fa28, type: 3}
-    weakSpawnTime: 1
-    weakSpawnPosition: {x: -3, y: 6}
-    weakSpawnNumber: 6
-    interval: 0.7
-    spawnFunc: {fileID: 11400000, guid: fd3e67f538bcce9498378b772d7361b0, type: 2}
-  - weakEnemy: {fileID: 2952900400466579503, guid: 1ab89db362f628745ad0dd77e406fa28, type: 3}
-    weakSpawnTime: 2
-    weakSpawnPosition: {x: 3, y: 6}
-    weakSpawnNumber: 6
-    interval: 0.7
-    spawnFunc: {fileID: 11400000, guid: fd3e67f538bcce9498378b772d7361b0, type: 2}
+  stageDate:
+  - {fileID: 11400000, guid: 25244def767170949ac431c996ea2dc6, type: 2}
+  gameManager: {fileID: 8948926702788106961}
   timeManager: {fileID: 5732513194221327834}
 --- !u!114 &5732513194221327834
 MonoBehaviour:
@@ -480,6 +466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8948926702788106960}
+  - component: {fileID: 8948926702788106961}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -534,6 +521,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8948926702788106961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8502789967102569368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f068e38483f6eaa4f88514d57f9e6b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  currentStage: 0
+  stageNumber: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

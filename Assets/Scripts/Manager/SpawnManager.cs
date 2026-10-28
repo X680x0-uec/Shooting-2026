@@ -5,9 +5,8 @@ using UnityEngine.InputSystem;
 public class SpawnManager : MonoBehaviour
 {
     // 敵の出現を管理するスクリプト
-    // ステージによって出現をどう変えるかは未実装なので、どこかは変える必要がありそうです。
-    [SerializeField] private EnemyInfo[] spawnData; // 微～強敵の出現情報の配列
-    [SerializeField] private WeakEnemyInfo[] weakDate; // ザコ敵の出現情報の配列
+    [SerializeField] private StageInfo[] stageDate; //ステージ1, 2, 3...という風に敵出現データの配列を受け取る
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private TimeManager timeManager;
     private float currentTime;
     private int nextSpawnIndex = 0; // 微～強敵の配列で次に出現する情報が入っているインデックス
@@ -19,13 +18,13 @@ public class SpawnManager : MonoBehaviour
         if(Keyboard.current.qKey.wasPressedThisFrame) start = true;
         if(start && timeManager.IstimePassing) currentTime += Time.deltaTime;
         // 微～強敵が時間になったら召喚される
-        while (nextSpawnIndex < spawnData.Length && currentTime >= spawnData[nextSpawnIndex].spawnTime){
-            SpawnEnemy(spawnData[nextSpawnIndex]);
+        while (nextSpawnIndex < stageDate[gameManager.stageNumber].spawnDate.Length && currentTime >= stageDate[gameManager.stageNumber].spawnDate[nextSpawnIndex].spawnTime){
+            SpawnEnemy(stageDate[gameManager.stageNumber].spawnDate[nextSpawnIndex]);
             nextSpawnIndex++;
         }
         // ザコ敵が時間になったら召喚される
-        while (weakNextSpawnIndex < weakDate.Length && currentTime >= weakDate[weakNextSpawnIndex].weakSpawnTime){
-            StartCoroutine(SpawnWeakEnemy(weakDate[weakNextSpawnIndex]));
+        while (weakNextSpawnIndex < stageDate[gameManager.stageNumber].weakDate.Length && currentTime >= stageDate[gameManager.stageNumber].weakDate[weakNextSpawnIndex].weakSpawnTime){
+            StartCoroutine(SpawnWeakEnemy(stageDate[gameManager.stageNumber].weakDate[weakNextSpawnIndex]));
             weakNextSpawnIndex++;
         }
     }
