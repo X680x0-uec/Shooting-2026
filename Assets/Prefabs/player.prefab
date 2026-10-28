@@ -284,6 +284,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 218a08e7-e667-4161-9aec-6ecbff83fec8
+    m_ActionName: 'Player/TimeStop[/Keyboard/z]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -302,5 +306,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 10
-  BulletPrefab: {fileID: 5926698830598786413, guid: f49fbe705a39b724a8782f411dec5bf8, type: 3}
+  BulletPrefab: {fileID: 7724083102469178208, guid: f49fbe705a39b724a8782f411dec5bf8, type: 3}
   bulletInterval: 0.1
+  InitialFireOffset: {x: 0, y: 0, z: 0}
