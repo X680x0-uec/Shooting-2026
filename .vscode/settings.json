@@ -69,4 +69,46 @@
     },
     "dotnet.defaultSolution": "Shooting-2026.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
+<<<<<<< HEAD
 }
+{
+  "security.workspace.trust.enabled": false,
+  "latex-workshop.latex.recipe.default": "lastUsed",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "platex and dvipdfmx",
+      "tools": ["platex", "platex", "dvipdfmx"]
+    }, {
+      "name": "uplatex and dvipdfmx",
+      "tools": ["uplatex", "uplatex", "dvipdfmx"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "platex",
+      "command": "platex",
+      "args": [
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "uplatex",
+      "command": "uplatex",
+      "args": [
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "dvipdfmx",
+      "command": "dvipdfmx",
+      "args": ["%DOCFILE%.dvi"]
+    }
+  ]
+}
+=======
+}
+>>>>>>> origin/main

@@ -253,6 +253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515c99f246d92a74c80156eeab6c8d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+<<<<<<< HEAD
+  moveSpeed: 10
+  BulletPrefab: {fileID: 7724083102469178208, guid: f49fbe705a39b724a8782f411dec5bf8, type: 3}
+  bulletInterval: 0.1
+  InitialFireOffset: {x: 0, y: 0, z: 0}
+=======
   timeManager: {fileID: 0}
   moveSpeed: 5
   BulletPrefab: {fileID: 7724083102469178208, guid: f49fbe705a39b724a8782f411dec5bf8, type: 3}
@@ -399,3 +405,4 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+>>>>>>> origin/main
