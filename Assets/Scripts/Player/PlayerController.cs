@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     //このクラスで時間停止の処理を行うが、GameMangagerクラスなどを作ってそれに処理させたほうがよい可能性もある
-    private bool IstimePassing = true; //時間が止まっているか
+    [SerializeField] private TimeManager timeManager; //時間が止まっているか
     [SerializeField] private float moveSpeed = 1f; //自機の動く速さ
     Rigidbody2D rb; //Rigidbody2Dコンポーネントの取得用
     [SerializeField] Bullet BulletPrefab; //弾のプレハブ（召喚できるオブジェクト）
@@ -18,6 +17,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>(); //playerからRigidbody2Dコンポーネントを取得
+        if(timeManager == null){
+            timeManager = GameObject.FindAnyObjectByType<TimeManager>();
+        }
     }
 
     public void OnMove(InputAction.CallbackContext callback) {
@@ -36,44 +38,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnTimeStop(InputAction.CallbackContext callback) {
-        //時間停止キーが押されたときの処理（pcはzkey）
-        if (IstimePassing) {
-            TimeStop();
-        } else {
-            TimePass();
-        }
-    }
-
-    private void TimeStop() {
-        foreach (Bullet bullet in FiredBullets) {
-            //Sceneに存在するBullet全てを停止させる
-            IstimePassing = false;
-            bullet.Stop();
-        }
-    }
-
-    private void TimePass() {
-        foreach (Bullet bullet in FiredBullets) {
-            //Sceneに存在するBullet全てを動かす
-            IstimePassing = true;
-            bullet.Move();
-        }
-    }
-
     private IEnumerator ShootLoop() {
         while (true) {
-            Bullet bullet;
-            if (IstimePassing) {
+            GameObject bullet;
+            if (timeManager.IstimePassing) {
                 Vector3 offset = InitialFireOffset;
-                bullet = Instantiate(BulletPrefab, transform.position + offset, Quaternion.identity);
+                bullet = Instantiate(BulletPrefab, transform.position + offset, Quaternion.identity).gameObject;
             } else {
                 Vector3 offset = InitialFireOffset * Random.Range(0.6f, 1.4f); //時間停止時に撃った弾は位置が乱れる
-                bullet = Instantiate(BulletPrefab, transform.position + offset, Quaternion.identity);
-                bullet.ChangeSpeed(); //時間停止時に撃った弾は速度が乱れる
-                bullet.Stop();
+                bullet = Instantiate(BulletPrefab, transform.position + offset, Quaternion.identity).gameObject;
+                Bullet bullet1 = bullet.GetComponent<Bullet>();
+                BulletCommon bulletCommon = bullet.GetComponent<BulletCommon>();
+                bulletCommon.ChangeSpeed(); //時間停止時に撃った弾は速度が乱れる
+                bullet1.Stop();
             }
-            FiredBullets.Add(bullet); //弾のリストに先ほど生成した弾を追加
+            FiredBullets.Add(bullet.GetComponent<Bullet>()); //弾のリストに先ほど生成した弾を追加
             FiredBullets.RemoveAll(b => b == null); //弾のリストの中で、時間経過や敵との衝突で消えたものを削除
             yield return new WaitForSeconds(bulletInterval); //bulletInterval秒待つ
         }

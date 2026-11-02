@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d457a2e06dffbe848a234b1bbce4ded6, type: 3}
+  m_Name: Stage 1
+  m_EditorClassIdentifier: Assembly-CSharp::StageInfo
+  spawnDate:
+  - Enemy: {fileID: 7385752571213274571, guid: 8179f1e4f2b58e046b1dc8e462f34723, type: 3}
+    spawnTime: 7
+    spawnPosition: {x: 0, y: 6}
+  weakDate:
+  - weakEnemy: {fileID: 2952900400466579503, guid: 1ab89db362f628745ad0dd77e406fa28, type: 3}
+    weakSpawnTime: 1
+    weakSpawnPosition: {x: -3, y: 6}
+    weakSpawnNumber: 3
+    interval: 1
+    spawnFunc: {fileID: 11400000, guid: fd3e67f538bcce9498378b772d7361b0, type: 2}
+  - weakEnemy: {fileID: 2952900400466579503, guid: 1ab89db362f628745ad0dd77e406fa28, type: 3}
+    weakSpawnTime: 1.5
+    weakSpawnPosition: {x: 3, y: 6}
+    weakSpawnNumber: 3
+    interval: 1
+    spawnFunc: {fileID: 11400000, guid: fd3e67f538bcce9498378b772d7361b0, type: 2}

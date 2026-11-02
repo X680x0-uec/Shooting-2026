@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8948973765645829238}
   - component: {fileID: 5289032800302246955}
   - component: {fileID: 7724083102469178208}
+  - component: {fileID: -14656476266813276}
+  - component: {fileID: 2674684794819636961}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,7 +106,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5481265b77369214a9be47aa4335aeaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  speed: 20
   mySprite: {fileID: 5289032800302246955}
   normalTexture: {fileID: 2208703988740019828, guid: 89601fa03f63ea84c8c1e45c119e3f1f, type: 3}
   timeStopTexture: {fileID: -8309957411914892820, guid: 551b26d806247084ca2d9451435a359d, type: 3}
+--- !u!114 &-14656476266813276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926698830598786413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3095c56931309c641a6ecc5def88533d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutCamera
+--- !u!114 &2674684794819636961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926698830598786413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d65a6e39059a29469c44ca620d58d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletCommon
+  bulletDate: {fileID: 11400000, guid: 5b3eb4ff8d38d794bb0249ce9914a7d0, type: 2}
