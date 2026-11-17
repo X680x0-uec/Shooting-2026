@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3c0f0c7ac797a4ba5062689d4c16b5, type: 3}
-  m_Name: B1-1
+  m_Name: S2-2
   m_EditorClassIdentifier: Assembly-CSharp::SkillExplaination
-  skillID: 1
-  skillName: Speedup
-  detailedExplaination: your speed will be a little bit faster.
+  skillID: 6
+  skillName: TimeStop2
+  detailedExplaination: 

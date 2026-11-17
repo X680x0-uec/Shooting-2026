@@ -603,7 +603,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 404838186}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 649073028}
+        m_TargetAssemblyTypeName: SkilltreeManager, Assembly-CSharp
+        m_MethodName: ShowSkillExplaination
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &404838186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +811,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 470136988}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 649073028}
+        m_TargetAssemblyTypeName: SkilltreeManager, Assembly-CSharp
+        m_MethodName: ShowSkillExplaination
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &470136988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1232,6 +1256,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2001773f438bc0f41b2a96c18ef9053b, type: 2}
   - {fileID: 11400000, guid: e507b6d0163a768409859d747baead17, type: 2}
   - {fileID: 11400000, guid: fbc034b7cf0d51b4ea37796ff552f246, type: 2}
+  - {fileID: 11400000, guid: a6c56fe1d490b834bba4dc06ef9dc544, type: 2}
+  - {fileID: 11400000, guid: 56eb61283b88b434480b53a6cc7ad725, type: 2}
+  - {fileID: 11400000, guid: 97a8af606fefb46498d03fb3f026c29e, type: 2}
+  - {fileID: 11400000, guid: 5f862facdf074f9408c54c0b576547ad, type: 2}
+  - {fileID: 11400000, guid: 8fdfdebfe7446f2439c42d6e28bb098a, type: 2}
+  - {fileID: 11400000, guid: 9aae3bd5598abc6499a4639fd97b5d1a, type: 2}
+  - {fileID: 11400000, guid: ce0c408deac79b141b2a90d425abab88, type: 2}
+  - {fileID: 11400000, guid: 69c89c482f53d804ca2ee4dfb47b1d17, type: 2}
   skillNameText: {fileID: 1462640332}
   detailedExplaination: {fileID: 1463559578}
   ApplyButton: {fileID: 854980754}
@@ -1332,7 +1364,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 701621239}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 649073028}
+        m_TargetAssemblyTypeName: SkilltreeManager, Assembly-CSharp
+        m_MethodName: ShowSkillExplaination
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &701621239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2191,7 +2235,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1149296763}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 649073028}
+        m_TargetAssemblyTypeName: SkilltreeManager, Assembly-CSharp
+        m_MethodName: ShowSkillExplaination
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1149296763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2414,7 +2470,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1299647699}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 649073028}
+        m_TargetAssemblyTypeName: SkilltreeManager, Assembly-CSharp
+        m_MethodName: ShowSkillExplaination
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1299647699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3075,7 +3143,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1787911681}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 649073028}
+        m_TargetAssemblyTypeName: SkilltreeManager, Assembly-CSharp
+        m_MethodName: ShowSkillExplaination
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1787911681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3260,7 +3340,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2014447979}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 649073028}
+        m_TargetAssemblyTypeName: SkilltreeManager, Assembly-CSharp
+        m_MethodName: ShowSkillExplaination
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2014447979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3512,7 +3604,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2145359253}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 649073028}
+        m_TargetAssemblyTypeName: SkilltreeManager, Assembly-CSharp
+        m_MethodName: ShowSkillExplaination
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2145359253
 MonoBehaviour:
   m_ObjectHideFlags: 0
