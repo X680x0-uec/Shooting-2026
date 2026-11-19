@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: S3-2
   m_EditorClassIdentifier: Assembly-CSharp::SkillExplaination
   skillID: 10
-  skillName: "\u30CF\u30C3\u30AD\u30F3\u30B02"
-  detailedExplaination: "\u3042\u3084\u3064\u308C\u308B\u6575\u306E\u6570\u304C\u3055\u3089\u306B\u5897\u3048\u307E\u3059"
+  skillName: "\u4F53\u529B\u5897\u5F372"
+  detailedExplaination: "HP\u304C1\u5897\u3048\u307E\u3059"
+  enforceSkill: 1
+  enforceValue: 1
