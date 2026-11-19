@@ -351,25 +351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78eca1c455b2f0d4f8c4aaed2c99a76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  spawnData:
-  - Enemy: {fileID: 7385752571213274571, guid: 8179f1e4f2b58e046b1dc8e462f34723, type: 3}
-    spawnTime: 7
-    spawnPosition: {x: 0, y: 6}
-  weakDate:
-  - weakEnemy: {fileID: 2952900400466579503, guid: 1ab89db362f628745ad0dd77e406fa28, type: 3}
-    weakSpawnTime: 1
-    weakSpawnNumber: 10
-    interval: 0.5
-    weakSpawnPosition: {x: -3, y: 6}
-    isAttack: 0
-    spawnFunc: {fileID: 11400000, guid: fd3e67f538bcce9498378b772d7361b0, type: 2}
-  - weakEnemy: {fileID: 2952900400466579503, guid: 1ab89db362f628745ad0dd77e406fa28, type: 3}
-    weakSpawnTime: 1.25
-    weakSpawnNumber: 10
-    interval: 0.5
-    weakSpawnPosition: {x: 3, y: 6}
-    isAttack: 0
-    spawnFunc: {fileID: 11400000, guid: fd3e67f538bcce9498378b772d7361b0, type: 2}
+  stageDate: []
+  gameManager: {fileID: 0}
   timeManager: {fileID: 5732513194221327834}
 --- !u!114 &5732513194221327834
 MonoBehaviour:
