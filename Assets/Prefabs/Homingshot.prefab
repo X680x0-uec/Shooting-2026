@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HomingShot
   homingBulletPrefab: {fileID: 6231454761172424115, guid: 4af20a2ee28a39e47835f4442f8e4654, type: 3}
   bulletCount: 1
-  spreadAngle: 20
+  spreadAngle: 15
   bulletSpeed: 5
   interval: 1.5
   startTime: 1

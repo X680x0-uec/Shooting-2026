@@ -12,5 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d457a2e06dffbe848a234b1bbce4ded6, type: 3}
   m_Name: Stage 2
   m_EditorClassIdentifier: Assembly-CSharp::StageInfo
-  spawnDate: []
-  weakDate: []
+  spawnDate:
+  - Enemy: {fileID: 7385752571213274571, guid: 8179f1e4f2b58e046b1dc8e462f34723, type: 3}
+    spawnTime: 1
+    spawnPosition: {x: 0, y: 6}
+  - Enemy: {fileID: 7385752571213274571, guid: 8179f1e4f2b58e046b1dc8e462f34723, type: 3}
+    spawnTime: 1
+    spawnPosition: {x: 3, y: 6}
+  - Enemy: {fileID: 7385752571213274571, guid: 8179f1e4f2b58e046b1dc8e462f34723, type: 3}
+    spawnTime: 1
+    spawnPosition: {x: -3, y: 6}
+  weakDate:
+  - weakEnemy: {fileID: 0}
+    weakSpawnTime: 0
+    weakSpawnPosition: {x: 0, y: 0}
+    weakSpawnNumber: 0
+    interval: 0
+    spawnFunc: {fileID: 0}

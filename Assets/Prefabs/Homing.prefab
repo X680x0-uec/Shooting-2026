@@ -145,7 +145,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   bulletSpeed: 0
   defaultSpeed: 5
-  rotateSpeed: 100
+  rotateSpeed: 80
   homingAngle: 20
   lifeTime: 7
 --- !u!114 &5796593452760647015
