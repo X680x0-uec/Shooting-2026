@@ -7,7 +7,9 @@ public class SkillExplaination : ScriptableObject {
     [TextArea(3, 6)]
     public string detailedExplaination = ""; //スキルの詳しい説明文
     public SkillType enforceSkill = SkillType.Speed; //強化対象のステータス、デフォルトはスピード強化
-    public float enforceValue = 0; //強化の程度、
+    public float enforceValue = 0; //強化の程度
+
+    public int cost = 0;
 
     public enum SkillType {
         Speed,
