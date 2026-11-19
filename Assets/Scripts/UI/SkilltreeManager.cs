@@ -24,10 +24,10 @@ public class SkilltreeManager : MonoBehaviour {
         showingSkillID = skillID;
         if (skillActivationStatus[skillID]) {
             ApplyButton.interactable = false;
-            ApplyButtonText.text = "Gained";
+            ApplyButtonText.text = "取得済";
         } else if (IsOneBeforeSkillGained(skillID)) {
             ApplyButton.interactable = true;
-            ApplyButtonText.text = "Apply";
+            ApplyButtonText.text = "適用";
         } else {
             ApplyButton.interactable = false;
             ApplyButtonText.text = "---";

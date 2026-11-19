@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillExplaination
   skillID: 8
   skillName: "\u6642\u9593\u505C\u6B624"
-  detailedExplaination: 
+  detailedExplaination: "\u6642\u9593\u505C\u6B62\u306E\u30AF\u30FC\u30EB\u30BF\u30A4\u30E0\u304C\u304B\u306A\u308A\u4E0A\u6607\u3057\u307E\u3059"
