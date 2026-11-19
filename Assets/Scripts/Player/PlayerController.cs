@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private InputAction sllow;
     [SerializeField] PlayerHp playerHp;
     private int bulletNumWhileTimeStop = 1; //時間停止中に発射する弾の数
+    [SerializeField] private UIManager uIManager;
     Vector3 inputVelocity;
 
     private void Start() {
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void OnShoot(InputAction.CallbackContext callback) {
+        if (Time.timeScale == 0f) return;
         //射撃時の処理
         if (callback.performed) {
             shootLoop = StartCoroutine(ShootLoop()); //ボタンが押された瞬間の場合、射撃ループを開始
@@ -47,6 +49,15 @@ public class PlayerController : MonoBehaviour {
         if (callback.canceled) {
             if (shootLoop != null) StopCoroutine(shootLoop); //ボタンが離された瞬間の場合、射撃ループを停止
         }
+    }
+
+    public void OnPose(InputAction.CallbackContext callback) {
+        uIManager.ShowPosePanel();
+        if (Time.timeScale == 0f) {
+            Time.timeScale = 1.0f;
+            return;
+        }
+        Time.timeScale = 0f;
     }
 
     private IEnumerator ShootLoop() {
