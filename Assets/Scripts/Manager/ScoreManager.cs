@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
 
     public int CurrentScore { get; private set; }
 
-    private const int RankingCount = 5;
+    private const int RankingCount = 5; // この値は、上位何位まで掲示したいかによって値を変える。(これだと上位5位までのスコアを記憶する)
     private const string RankingKey = "Ranking_";
 
     private bool hasSavedScore = false;
@@ -29,12 +29,14 @@ public class ScoreManager : MonoBehaviour
         Debug.Log(CurrentScore);
     }
 
+    // タイトルからゲームシーンに移動するとき、ScoreManager.Instance.ResetScore(); を実行する。
     public void ResetScore()
     {
         CurrentScore = 0;
         hasSavedScore = false;
     }
 
+    // ゲームシーンからゲームオーバー画面、クリア画面、タイトルどれかに行くとき、ScoreManager.Instance.SaveScoreToRanking(); を実行する。
     public void SaveScoreToRanking()
     {
         if (hasSavedScore) return;

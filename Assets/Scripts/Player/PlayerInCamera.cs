@@ -12,7 +12,7 @@ public class PlayerInCamera : MonoBehaviour
     {
         maincamera = Camera.main;
         height = maincamera.orthographicSize; // カメラの高さの半分の長さをheightにいれている
-        width = height * maincamera.aspect; // 比率に合わせてwidthに長さをいれている
+        width = height * maincamera.aspect * 0.45f; // 比率に合わせてwidthに長さをいれている
     }
 
     // Update is called once per frame
