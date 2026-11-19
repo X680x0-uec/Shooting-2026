@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: S1-4
   m_EditorClassIdentifier: Assembly-CSharp::SkillExplaination
   skillID: 4
-  skillName: Speedup4
-  detailedExplaination: no one would reach your speed.
+  skillName: "\u5C04\u6483\u9593\u9694\u4E0A\u66072"
+  detailedExplaination: "\u5C04\u6483\u9593\u9694\u304C\u5927\u5E45\u306B\u4E0A\u6607\u3057\u307E\u3059"
+  enforceSkill: 2
+  enforceValue: 0.07

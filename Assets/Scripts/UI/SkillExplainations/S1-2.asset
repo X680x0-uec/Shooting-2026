@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: S1-2
   m_EditorClassIdentifier: Assembly-CSharp::SkillExplaination
   skillID: 2
-  skillName: SpeedUp2
-  detailedExplaination: 
+  skillName: "\u5C04\u6483\u9593\u9694\u4E0A\u66071"
+  detailedExplaination: "\u5C04\u6483\u9593\u9694\u304C\u50C5\u304B\u306B\u4E0A\u6607\u3057\u307E\u3059"
+  enforceSkill: 2
+  enforceValue: 0.18

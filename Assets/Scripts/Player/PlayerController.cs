@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
     //このクラスで時間停止の処理を行うが、GameMangagerクラスなどを作ってそれに処理させたほうがよい可能性もある
     [SerializeField] private TimeManager timeManager; //時間が止まっているか
     [SerializeField] private float moveSpeed = 1f; //自機の動く速さ
@@ -15,21 +14,22 @@ public class PlayerController : MonoBehaviour
     private List<Bullet> FiredBullets = new List<Bullet>(); //自分が撃った弾のリスト
     [SerializeField] private Vector3 InitialFireOffset = Vector3.zero; //弾が出る場所の補正
     [SerializeField] private InputAction sllow;
+    [SerializeField] PlayerHp playerHp;
+    private int bulletNumWhileTimeStop = 1; //時間停止中に発射する弾の数
+    [SerializeField] private UIManager uIManager;
     Vector3 inputVelocity;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>(); //playerからRigidbody2Dコンポーネントを取得
-        if(timeManager == null){
+        if (timeManager == null) {
             timeManager = GameObject.FindAnyObjectByType<TimeManager>();
         }
         sllow.Enable();
     }
 
-    void Update()
-    {
+    void Update() {
         float currentMoveSpeed = moveSpeed;
-        if (sllow.IsPressed())
-        {
+        if (sllow.IsPressed()) {
             currentMoveSpeed *= 0.5f;
         }
         rb.linearVelocity = inputVelocity * currentMoveSpeed; //rigidbodyで現在の速度をcurrentMoveSpeedに比例して変更する
@@ -40,14 +40,24 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnShoot(InputAction.CallbackContext callback) {
+        if (Time.timeScale == 0f) return;
         //射撃時の処理
         if (callback.performed) {
             shootLoop = StartCoroutine(ShootLoop()); //ボタンが押された瞬間の場合、射撃ループを開始
         }
 
         if (callback.canceled) {
-            if(shootLoop != null) StopCoroutine(shootLoop); //ボタンが離された瞬間の場合、射撃ループを停止
+            if (shootLoop != null) StopCoroutine(shootLoop); //ボタンが離された瞬間の場合、射撃ループを停止
         }
+    }
+
+    public void OnPose(InputAction.CallbackContext callback) {
+        uIManager.ShowPosePanel();
+        if (Time.timeScale == 0f) {
+            Time.timeScale = 1.0f;
+            return;
+        }
+        Time.timeScale = 0f;
     }
 
     private IEnumerator ShootLoop() {
@@ -67,6 +77,25 @@ public class PlayerController : MonoBehaviour
             FiredBullets.Add(bullet.GetComponent<Bullet>()); //弾のリストに先ほど生成した弾を追加
             FiredBullets.RemoveAll(b => b == null); //弾のリストの中で、時間経過や敵との衝突で消えたものを削除
             yield return new WaitForSeconds(bulletInterval); //bulletInterval秒待つ
+        }
+    }
+
+    public void Enforce(int skillType, float value) {
+        switch (skillType) {
+            case 0:
+                moveSpeed = value;
+                break;
+            case 1:
+                bulletInterval = value;
+                break;
+            case 2:
+                timeManager.stoptime = value;
+                break;
+            case 3:
+                playerHp.ChangeHp(value);
+                break;
+            default:
+                break;
         }
     }
 }

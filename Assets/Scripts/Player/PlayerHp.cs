@@ -1,61 +1,53 @@
-using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
-public class PlayerHp : MonoBehaviour
-{
+public class PlayerHp : MonoBehaviour {
     [SerializeField] private float hp = 5;
     [SerializeField] private GameObject player;
+    [SerializeField] private TextMeshProUGUI HPText;
     private float invincibleTime = 2f;
     private float blinkInterval = 0.1f;
     private bool isInvincible = false;
     private SpriteRenderer spriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    void Start() {
         spriteRenderer = player.GetComponent<SpriteRenderer>();
+        RefleshHPText();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(isInvincible) return;
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (isInvincible) return;
 
-        if (collision.gameObject.CompareTag("EnemyBullet"))
-        {
-            if(hp > 0)
-            {
+        if (collision.gameObject.CompareTag("EnemyBullet")) {
+            if (hp > 0) {
                 StartCoroutine(deleteShoot());
                 StartCoroutine(InvincibleCoroutine());
                 hp -= 1;
-            }
-            else
-            {
+                RefleshHPText();
+            } else {
                 Destroy(player.gameObject);
             }
         }
     }
 
 
-    private IEnumerator deleteShoot()
-    {
+    private IEnumerator deleteShoot() {
         float r = 0;
         GameObject[] eweapons = GameObject.FindGameObjectsWithTag("EnemyBullet");
-        while (true)
-        {
+        while (true) {
             int i = 0;
-            foreach(GameObject eweapon in eweapons){
-                if(eweapon == null){
+            foreach (GameObject eweapon in eweapons) {
+                if (eweapon == null) {
                     i++;
-                    if(i == eweapons.Length)
-                    {
+                    if (i == eweapons.Length) {
                         yield break;
                     }
                     continue;
                 }
 
                 float distance = Vector2.Distance(this.transform.position, eweapon.transform.position);
-                if(distance <= r)
-                {
+                if (distance <= r) {
                     Destroy(eweapon.gameObject);
                 }
             }
@@ -64,12 +56,10 @@ public class PlayerHp : MonoBehaviour
         }
     }
 
-    private IEnumerator InvincibleCoroutine()
-    {
+    private IEnumerator InvincibleCoroutine() {
         isInvincible = true;
         float elapsed = 0f;
-        while(elapsed < invincibleTime)
-        {
+        while (elapsed < invincibleTime) {
             spriteRenderer.enabled = !spriteRenderer.enabled;
             yield return new WaitForSeconds(blinkInterval);
             elapsed += blinkInterval;
@@ -77,5 +67,14 @@ public class PlayerHp : MonoBehaviour
 
         spriteRenderer.enabled = true;
         isInvincible = false;
+    }
+
+    public void ChangeHp(float value) {
+        hp += value;
+        RefleshHPText();
+    }
+
+    public void RefleshHPText() {
+        HPText.text = "HP:" + hp;
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5d83ab0c593abc443aec88310efc24d8
+guid: e64ae2704e102d349be593dfb7589024
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - yosugara ver12
+  - RocknRoll One
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
