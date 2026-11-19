@@ -59,6 +59,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pose",
+                    "type": "Button",
+                    "id": "f472094e-4ea3-4428-9c5d-85a37881e448",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -378,6 +387,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "TimeStop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d5f96c0-2ed0-4f39-8af9-0ac139681bcd",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Pose",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
