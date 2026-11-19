@@ -1,9 +1,11 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class PlayerHp : MonoBehaviour {
     [SerializeField] private float hp = 5;
     [SerializeField] private GameObject player;
+    [SerializeField] private TextMeshProUGUI HPText;
     private float invincibleTime = 2f;
     private float blinkInterval = 0.1f;
     private bool isInvincible = false;
@@ -11,6 +13,7 @@ public class PlayerHp : MonoBehaviour {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         spriteRenderer = player.GetComponent<SpriteRenderer>();
+        RefleshHPText();
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
@@ -21,6 +24,7 @@ public class PlayerHp : MonoBehaviour {
                 StartCoroutine(deleteShoot());
                 StartCoroutine(InvincibleCoroutine());
                 hp -= 1;
+                RefleshHPText();
             } else {
                 Destroy(player.gameObject);
             }
@@ -67,5 +71,10 @@ public class PlayerHp : MonoBehaviour {
 
     public void ChangeHp(float value) {
         hp += value;
+        RefleshHPText();
+    }
+
+    public void RefleshHPText() {
+        HPText.text = "HP:" + hp;
     }
 }
