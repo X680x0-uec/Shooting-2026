@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: S3-2
   m_EditorClassIdentifier: Assembly-CSharp::SkillExplaination
   skillID: 10
-  skillName: Hack2
+  skillName: "\u30CF\u30C3\u30AD\u30F3\u30B02"
   detailedExplaination: 
