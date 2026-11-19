@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5283540217620830475}
   - component: {fileID: 4509117496319635044}
   - component: {fileID: 2599512303166789858}
-  - component: {fileID: 710365408579013434}
-  - component: {fileID: 6241308764948267741}
+  - component: {fileID: 3780682200554122543}
+  - component: {fileID: -3808261685735591977}
   - component: {fileID: 3376325846647592936}
   - component: {fileID: 4533763186682252010}
   m_Layer: 0
@@ -132,7 +132,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &710365408579013434
+--- !u!114 &3780682200554122543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad11d4c2fcd2ef64fb9e849059df3904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Uedetomaru
---- !u!114 &6241308764948267741
+--- !u!114 &-3808261685735591977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,11 +153,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7385752571213274571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 082f5749b2c57fb43af9fed75414c86a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fbd2a549cf8c4443aeddf1212018586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fan2Player
-  interval: 0.3
-  EnemyBullet: {fileID: 6231454761172424115, guid: dcbb16472b2e48143981aab076c6d447, type: 3}
+  enemyBullet: {fileID: 6231454761172424115, guid: dcbb16472b2e48143981aab076c6d447, type: 3}
+  bulletCount: 3
+  fanAngle: 36
+  bulletSpeed: 3
+  interval: 0.6
+  startTime: 1
+  endTime: 15
 --- !u!114 &3376325846647592936
 MonoBehaviour:
   m_ObjectHideFlags: 0

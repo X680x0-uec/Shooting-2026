@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6520844856271884407}
   - component: {fileID: 8321172636003004932}
   - component: {fileID: 7275392374167765328}
-  - component: {fileID: 7634831830977390833}
+  - component: {fileID: -3890761048670359092}
+  - component: {fileID: 4692950491647628107}
   - component: {fileID: -1400714708147620875}
   - component: {fileID: 2625238672690432412}
   m_Layer: 0
@@ -131,7 +132,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &7634831830977390833
+--- !u!114 &-3890761048670359092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +144,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86829c20af4ea84428bbbdaae0d05666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStraightDown
-  speed: 3
+  speed: 1
+--- !u!114 &4692950491647628107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952900400466579503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fbd2a549cf8c4443aeddf1212018586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::zikinerai
+  enemyBullet: {fileID: 6231454761172424115, guid: dcbb16472b2e48143981aab076c6d447, type: 3}
+  bulletCount: 1
+  fanAngle: 60
+  bulletSpeed: 2.5
+  interval: 1
+  startTime: 1
+  endTime: 7
 --- !u!114 &-1400714708147620875
 MonoBehaviour:
   m_ObjectHideFlags: 0
