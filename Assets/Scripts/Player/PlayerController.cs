@@ -14,17 +14,29 @@ public class PlayerController : MonoBehaviour
     private Coroutine shootLoop; //弾を継続的に発射するループ（コルーチン）の取得用
     private List<Bullet> FiredBullets = new List<Bullet>(); //自分が撃った弾のリスト
     [SerializeField] private Vector3 InitialFireOffset = Vector3.zero; //弾が出る場所の補正
+    [SerializeField] private InputAction sllow;
+    Vector3 inputVelocity;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>(); //playerからRigidbody2Dコンポーネントを取得
         if(timeManager == null){
             timeManager = GameObject.FindAnyObjectByType<TimeManager>();
         }
+        sllow.Enable();
+    }
+
+    void Update()
+    {
+        float currentMoveSpeed = moveSpeed;
+        if (sllow.IsPressed())
+        {
+            currentMoveSpeed *= 0.5f;
+        }
+        rb.linearVelocity = inputVelocity * currentMoveSpeed; //rigidbodyで現在の速度をcurrentMoveSpeedに比例して変更する
     }
 
     public void OnMove(InputAction.CallbackContext callback) {
-        Vector3 inputVelocity = callback.ReadValue<Vector2>(); //wasd又は方向キー入力をVector3で取得（z要素は0になる）
-        rb.linearVelocity = inputVelocity * moveSpeed; //rigidbodyで現在の速度をmoveSpeedに比例して変更する
+        inputVelocity = callback.ReadValue<Vector2>(); //wasd又は方向キー入力をVector3で取得（z要素は0になる）
     }
 
     public void OnShoot(InputAction.CallbackContext callback) {

@@ -188,3 +188,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHPManager
   enemyDate: {fileID: 11400000, guid: ed7ab09d5b92f8a4a856caa0513de220, type: 2}
+  point: 110
+  scale: 37
