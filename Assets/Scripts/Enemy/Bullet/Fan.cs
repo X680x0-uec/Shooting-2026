@@ -3,28 +3,47 @@ using UnityEngine;
 public class Fan : MonoBehaviour
 {
     // 扇形に発射される敵の弾のスクリプト
-    [HideInInspector] public Vector3 direction; // 方向は敵オブジェクトが指定するので、publicだけどインスペクターには表示しない
+    [HideInInspector] public Vector3 direction; // 進行方向（敵スクリプトから設定）
+    [HideInInspector] public float bulletSpeed; // 敵側から弾速を指定する場合用
+
+    [Header("弾の基本設定")]
+    [SerializeField] private float defaultSpeed = 7f; // 単独使用時のデフォルト弾速
+    [SerializeField] private float lifeTime = 6f;     // 画面外へ出た後の自動消滅時間（秒）
+
     private TimeManager timeManager;
-    [SerializeField] private float speed = 7f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private float currentLifeTime = 0f;
+
     void Start()
     {
         timeManager = GameObject.FindAnyObjectByType<TimeManager>();
+        // 敵側から弾速が指定されていなければデフォルト値を使う
+        if (bulletSpeed <= 0f)
+        {
+            bulletSpeed = defaultSpeed;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (timeManager.IstimePassing)
+        if (timeManager != null && timeManager.IstimePassing)
         {
-            transform.Translate(direction * speed * Time.deltaTime);
+            // ワールド座標基準（Space.World）で指定方向へ移動させる
+            transform.Translate(direction.normalized * bulletSpeed * Time.deltaTime, Space.World);
+
+            // ポーズ対応の寿命カウント（一定時間経過で自動削除）
+            currentLifeTime += Time.deltaTime;
+            if (currentLifeTime >= lifeTime)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // 敵の弾がプレイヤーに当たった時の処理(弾のスクリプト全部に書くと面倒なので、まとめるかも)
-        if (collision.gameObject.CompareTag("PlayerCore")){
+        // 敵の弾がプレイヤーに当たった時の処理
+        if (collision.gameObject.CompareTag("PlayerCore"))
+        {
             Destroy(this.gameObject);
         }
     }
