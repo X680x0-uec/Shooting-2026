@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,15 +10,23 @@ public class SkilltreeManager : MonoBehaviour {
 
     [SerializeField] private TextMeshProUGUI skillNameText;
     [SerializeField] private TextMeshProUGUI detailedExplaination;
+    [SerializeField] private TextMeshProUGUI pointText;
     [SerializeField] private Button ApplyButton;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private TextMeshProUGUI ApplyButtonText;
+    private int currentPoint = 0;
+    [SerializeField] private float pointInterval = 2f;
 
     private int showingSkillID = 0;
     private void Awake() {
+        currentPoint = 0;
         for (int i = 0; i < skillData.Count; i++) {
             skillActivationStatus.Add(false);
         }
+    }
+
+    private void Start() {
+        StartCoroutine(PointLoop());
     }
 
     public void ShowSkillExplaination(int skillID) {
@@ -46,6 +55,9 @@ public class SkilltreeManager : MonoBehaviour {
     }
 
     public void ActivateSkill() {
+        if (skillData[showingSkillID].cost > currentPoint) return;
+        currentPoint -= skillData[showingSkillID].cost;
+        RefleshPointText();
         skillActivationStatus[showingSkillID] = true;
         ShowSkillExplaination(showingSkillID);
         ApplySkillEnforece(showingSkillID);
@@ -61,5 +73,17 @@ public class SkilltreeManager : MonoBehaviour {
         } else {
             playerController.Enforce(3, skillData[skillID].enforceValue);
         }
+    }
+
+    private IEnumerator PointLoop() {
+        while (true) {
+            yield return new WaitForSeconds(pointInterval);
+            currentPoint += 10;
+            RefleshPointText();
+        }
+    }
+
+    private void RefleshPointText() {
+        pointText.text = "スキルポイント:" + currentPoint;
     }
 }

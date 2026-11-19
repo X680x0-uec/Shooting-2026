@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillExplaination
   skillID: 3
   skillName: "\u901F\u5EA6\u5897\u52A02"
-  detailedExplaination: "\u6A5F\u4F53\u306E\u79FB\u52D5\u901F\u5EA6\u304C\u5927\u5E45\u306B\u4E0A\u6607\u3057\u307E\u3059"
+  detailedExplaination: "\u6A5F\u4F53\u306E\u79FB\u52D5\u901F\u5EA6\u304C\u5927\u5E45\u306B\u4E0A\u6607\u3057\u307E\u3059\n\u6D88\u8CBB\u30B3\u30B9\u30C8\uFF1A40"
   enforceSkill: 0
   enforceValue: 10
+  cost: 40
