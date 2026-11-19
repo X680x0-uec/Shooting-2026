@@ -63,7 +63,6 @@ public class ScoreManager : MonoBehaviour
             }
         }
     }
-
     public int GetRankingScore(int rank)
     {
         if (rank < 0 || rank >= RankingCount) return 0;

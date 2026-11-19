@@ -11,12 +11,14 @@ public class SpawnManager : MonoBehaviour
     private float currentTime;
     private int nextSpawnIndex = 0; // 微～強敵の配列で次に出現する情報が入っているインデックス
     private int weakNextSpawnIndex = 0; // ザコ敵の配列で次に出現する情報が入っているインデックス
-    private bool start = false; // テストプレイ用
+    //private bool start = false; // テストプレイ用
     void Update()
     {
         //このstartはテストプレイ用で、Qキーを押したら開始っていうやつなので、実際出すときになったら消しましょう
-        if(Keyboard.current.qKey.wasPressedThisFrame) start = true;
-        if(start && timeManager.IstimePassing) currentTime += Time.deltaTime;
+        //if(Keyboard.current.qKey.wasPressedThisFrame) start = true;
+        //
+        //start　&& もあったが試験用のため削除
+        if(timeManager.IstimePassing) currentTime += Time.deltaTime;
         // 微～強敵が時間になったら召喚される
         while (nextSpawnIndex < stageDate[gameManager.stageNumber].spawnDate.Length && currentTime >= stageDate[gameManager.stageNumber].spawnDate[nextSpawnIndex].spawnTime){
             SpawnEnemy(stageDate[gameManager.stageNumber].spawnDate[nextSpawnIndex]);
