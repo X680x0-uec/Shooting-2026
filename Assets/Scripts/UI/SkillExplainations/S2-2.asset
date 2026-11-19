@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: S2-2
   m_EditorClassIdentifier: Assembly-CSharp::SkillExplaination
   skillID: 6
-  skillName: TimeStop2
+  skillName: "\u6642\u9593\u505C\u6B622"
   detailedExplaination: 

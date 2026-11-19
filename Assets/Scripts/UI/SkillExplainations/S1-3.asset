@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: S1-3
   m_EditorClassIdentifier: Assembly-CSharp::SkillExplaination
   skillID: 3
-  skillName: SpeedUp3
-  detailedExplaination: your speed will be as fast as light.
+  skillName: "\u901F\u5EA6\u5F37\u53164"
+  detailedExplaination: "\u4FE1\u3058\u3089\u308C\u306A\u3044\u304F\u3089\u3044\u901F\u304F\u306A\u308B\u3088\uFF01"
