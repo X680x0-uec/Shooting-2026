@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6866138578151504878}
   - component: {fileID: 8710090283561754858}
   - component: {fileID: 7812084040808149165}
+  - component: {fileID: -8387384351545757134}
   - component: {fileID: -8382383216548504934}
   - component: {fileID: 7211946502034919623}
   m_Layer: 0
@@ -173,6 +174,20 @@ MonoBehaviour:
   bigBulletSpeed: 3.5
   bigInterval: 2.2
   leadAccuracy: 0.5
+--- !u!114 &-8387384351545757134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322121932992720962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5379cee780e8ee45b7944eaddff2dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemyscore
+  hitScore: 2
+  defeatScore: 10000
 --- !u!114 &-8382383216548504934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,3 +213,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHPManager
   enemyDate: {fileID: 11400000, guid: 925759fdd41a66041a4c7925bf489a5f, type: 2}
+  point: 0
+  scale: 0

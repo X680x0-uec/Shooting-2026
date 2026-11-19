@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7275392374167765328}
   - component: {fileID: 828425539402499210}
   - component: {fileID: 4692950491647628107}
+  - component: {fileID: -3067773527565930288}
   - component: {fileID: -1400714708147620875}
   - component: {fileID: 2625238672690432412}
   m_Layer: 0
@@ -164,6 +165,20 @@ MonoBehaviour:
   interval: 1
   startTime: 1
   endTime: 7
+--- !u!114 &-3067773527565930288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952900400466579503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5379cee780e8ee45b7944eaddff2dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemyscore
+  hitScore: 1
+  defeatScore: 20
 --- !u!114 &-1400714708147620875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +204,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHPManager
   enemyDate: {fileID: 11400000, guid: 4a3060a07b2ab474884a2a22551d988d, type: 2}
+  point: 0
+  scale: 0
