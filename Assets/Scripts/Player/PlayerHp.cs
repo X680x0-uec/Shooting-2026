@@ -6,6 +6,7 @@ public class PlayerHp : MonoBehaviour {
     [SerializeField] private float hp = 5;
     [SerializeField] private GameObject player;
     [SerializeField] private TextMeshProUGUI HPText;
+    [SerializeField] Scene sceneManager;
     private float invincibleTime = 2f;
     private float blinkInterval = 0.1f;
     private bool isInvincible = false;
@@ -20,13 +21,14 @@ public class PlayerHp : MonoBehaviour {
         if (isInvincible) return;
 
         if (collision.gameObject.CompareTag("EnemyBullet")) {
-            if (hp > 0) {
+            if (hp > 1) {
                 StartCoroutine(deleteShoot());
                 StartCoroutine(InvincibleCoroutine());
                 hp -= 1;
                 RefleshHPText();
             } else {
-                Destroy(player.gameObject);
+                sceneManager.SceneChange("TitleScene");
+                //Destroy(player.gameObject);
             }
         }
     }
